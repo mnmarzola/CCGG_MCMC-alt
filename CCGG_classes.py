@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[15]:
 
 
 import numpy as np
@@ -17,7 +17,7 @@ import time
 
 # # Data
 
-# In[ ]:
+# In[16]:
 
 
 class Data:
@@ -61,7 +61,7 @@ class Data:
         plt.figure()
         plt.errorbar(self.SNe_redshift, self.distmod, yerr=self.distmod_unc, capsize=3, fmt='r.', label='Pantheon data')
         plt.xlabel('$z$')
-        plt.ylabel('$\mu$')
+        plt.ylabel(r'$\mu$')
         plt.legend()
         plt.show()
         return
@@ -72,7 +72,7 @@ class Data:
         plt.figure()
         plt.errorbar(self.CC_redshift, self.CC_Hub, yerr=self.CC_Hub_unc, capsize=3, fmt='r.', label='CC data')
         plt.xlabel('$z$')
-        plt.ylabel('$H\,\,\,[km/s/Mpc]$')
+        plt.ylabel(r'$H\,\,\,[km/s/Mpc]$')
         plt.legend()
         plt.show()
         return
@@ -91,7 +91,7 @@ class Data:
         plt.figure()
         plt.errorbar(self.BAO_redshift, self.BAO_DA_rdrag, yerr=self.BAO_DA_rdrag_unc, capsize=3, fmt='r.', label='BAO data')
         plt.xlabel('$z$')
-        plt.ylabel('$D_A/r_{drag}$')
+        plt.ylabel(r'$D_A/r_{drag}$')
         plt.legend()
         plt.show()
         return
@@ -113,7 +113,7 @@ class Data:
 
 # # Numerical Solution
 
-# In[ ]:
+# In[17]:
 
 
 class AXIS_interval:
@@ -127,7 +127,7 @@ class AXIS_interval:
         self.me   = 0
 
 
-# In[ ]:
+# In[18]:
 
 
 class AXIS:
@@ -178,7 +178,7 @@ class AXIS:
         return -1
 
 
-# In[ ]:
+# In[19]:
 
 
 class FLEQ:
@@ -391,7 +391,7 @@ class FLEQ:
         ax = fig.add_subplot(111)
         ax.set_xlim(xmin, xmax)
         ax.set_ylim(ymin, ymax)
-        plt.xlabel('$\\tau$')
+        plt.xlabel(r'$\tau$')
         plt.ylabel('$z,H,s,a$')
         plt.xscale('linear')
         ax.axvline(x[imin],color="grey", ls='dotted', zorder=-1)
@@ -407,7 +407,7 @@ class FLEQ:
         return
 
 
-# In[ ]:
+# In[20]:
 
 
 # distance modulus
@@ -571,10 +571,10 @@ class MDLS:
         ax.set_xlim(xmin, xmax)
         ax.set_ylim(ymin, ymax)
         plt.xlabel('$z$')
-        plt.ylabel('$r_{cd} \, (z)$')
+        plt.ylabel(r'$r_{cd} \, (z)$')
         ax.axvline(self.ztr, color="grey", ls='dotted', zorder=-1)
-        ax.plot(z, rcd, 'k', label='$r_{cd} \, (z)$')
-        ax.plot(self.ztr, self.rtr, 'x', color='r', label='$r_{cd} \, (z_{tr})$')
+        ax.plot(z, rcd, 'k', label=r'$r_{cd} \, (z)$')
+        ax.plot(self.ztr, self.rtr, 'x', color='r', label=r'$r_{cd} \, (z_{tr})$')
         plt.legend()
         plt.show()
         return
@@ -592,9 +592,9 @@ class MDLS:
         ax.set_xlim(xmin, xmax)
         ax.set_ylim(ymin, ymax)
         plt.errorbar(redshift, distmod, yerr=distmod_unc, capsize=3, fmt='r.', label='Pantheon data')
-        plt.plot(z, mu, color='b',label='$\mu$')
+        plt.plot(z, mu, color='b',label=r'$\mu$')
         plt.xlabel('$z$')
-        plt.ylabel('$\mu \, (z)$')
+        plt.ylabel(r'$\mu \, (z)$')
         plt.legend()
         plt.show()
         return
