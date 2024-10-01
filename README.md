@@ -9,3 +9,5 @@ These settings reproduce the singular behavior on \mu vs z.
 Hypothesis: H(z) approaches zero at some point during integration.
 
 Obs.: This may be (un)physically justified, but further analysis of the validity of \Omega parameters combinations is required.
+
+LINE 302: switch == 1 -> self.switch = 1
