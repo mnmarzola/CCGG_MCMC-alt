@@ -300,7 +300,7 @@ class FLEQ:
                 yp[2] = -H*s+self.eps*2*np.sqrt(ks)
             else: 
                 yp[2] = w*s
-                switch == 1
+                self.switch = 1
         s2Hw = s2*(H+w)
         if abs(s2Hw) > self.prc and abs(w) < mv:
             E = 1.5*Om*H*z3-s2*(5*H-(2*Os-1)*w)
